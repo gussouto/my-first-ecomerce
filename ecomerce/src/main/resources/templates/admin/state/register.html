@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="https://thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+
+    <form action="/savestate" th:object="${state}" method="POST">
+
+        <label>State Name</label>
+        <input type="text" th:field="*{name}"/>
+
+        <label>State Name</label>
+        <input type="text" th:field="*{abbreviation}"/>
+
+        <input type="hidden" th:field="*{id}"/>
+
+        <button type="submit">Save</button>
+
+    </form>
+
+</body>
+</html>
