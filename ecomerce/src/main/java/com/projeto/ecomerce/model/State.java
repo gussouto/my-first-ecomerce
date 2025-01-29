@@ -15,12 +15,6 @@ public class State implements Serializable {
     private String name;
     private String abbreviation;
 
-/*    public State() {
-        this.id = id;
-        this.abbreviation = abbreviation;
-        this.name = name;
-    }*/
-
     public Long getId() {
         return id;
     }

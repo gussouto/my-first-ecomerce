@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="https://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>ID</tr>
+            <tr>Name</tr>
+            <tr>Abbreviation</tr>
+            <tr>Action</tr>
+        </thead>
+
+        <tbody th:each="state: ${listStates}">
+            <tr>
+                <td th:text="${state.id}"></td>
+                <td th:text="${state.name}"></td>
+                <td th:text="${state.abbreviation}"></td>
+                <td colspan="2">
+                    <a th:href="@{/editState/{id}(id=${state.id})}">Edit</a>
+                    <a th:href="@{/removeState/{id}(id=${state.id})}">Remove</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>
