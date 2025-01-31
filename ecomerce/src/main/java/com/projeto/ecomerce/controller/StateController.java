@@ -2,7 +2,6 @@ package com.projeto.ecomerce.controller;
 
 import com.projeto.ecomerce.model.State;
 import com.projeto.ecomerce.repository.StateRepository;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,13 +34,13 @@ public class StateController {
 
     @GetMapping("/editState/{id}")
     public ModelAndView edit(@PathVariable("id") Long id) {
-        Optional<State> state = stateRepository.findById(id);
+//        Optional<State> state = stateRepository.findById(id);
         return register(stateRepository.getReferenceById(id));
     }
 
     @GetMapping("/removeState/{id}")
     public ModelAndView remove(@PathVariable("id") Long id) {
-        Optional<State> state = stateRepository.findById(id);
+//        Optional<State> state = stateRepository.findById(id);
         stateRepository.delete(stateRepository.getReferenceById(id));
         return list();
     }
